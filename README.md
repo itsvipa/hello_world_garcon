@@ -1,0 +1,59 @@
+# Hello Garcon
+
+A simple intro Garcon workflow.
+
+![](hello_garcon_dag.png)
+
+### Installation
+
+#### Dependencies
+- python 3.4
+
+#### Set up a virtual Python environment
+```sh
+$ pyvenv ./env
+$ source ./env/bin/activate
+$ pip install -r requirements.txt
+```
+#### Set up environment variables
+.env.shadow is a template environment variable script that exports keys and values necessary for the app.  You will need to copy this file to `.env` and populate the necessary keys.
+```sh
+$ cp .env.shadow .env
+$ vim .env
+$ source .env
+```
+
+### Running a Garcon Workflow
+
+In seperate terminals run a Decider & a Worker
+
+(don't forget to activate the virtualenv and set the required .env variables first in each terminal)
+
+#### Garcon Worker
+```sh
+$ source env/bin/activate
+$ source .env
+$ python ./run_worker.py 
+```
+
+#### Garcon Decider
+```sh
+$ source env/bin/activate
+$ source .env
+$ python ./run_decider.py 
+```
+
+Once a Decider & Worker are running, open another terminal & execute a workflow.
+
+#### Execute SWF flow
+```sh
+$ source env/bin/activate
+$ source .env
+$ python ./execute_workflow.py 
+```
+
+After executing `python ./execute_workflow.py`, a SWF flow will be visible in the AWS console. Once the Decider & Worker pick up the workflow request from AWS, they will begin printing to standard output in their terminals.
+
+#### Troubleshooting
+
+* Sometimes there is a delay between when a Decider / Worker pick up a workflow from AWS. If it takes longer than a minute for a workflow to begin executing, kill the work flow via the AWS console.
