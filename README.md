@@ -56,4 +56,4 @@ After executing `python ./execute_workflow.py`, a SWF flow will be visible in th
 
 #### Troubleshooting
 
-* Sometimes there is a delay between when a Decider / Worker pick up a workflow from AWS. If it takes longer than a minute for a workflow to begin executing, kill the work flow via the AWS console.
+* When a Decider / Worker is killed and restarted in the middle of the polling AWS, there is a risk for the next 70 seconds that AWS will mistakenly send a Decider/Worker action to the old, dead daemon [see here](https://github.com/aws/aws-flow-ruby/issues/31#issuecomment-37559273). If it takes longer than a minute for a workflow to begin executing, kill the work flow via the AWS console.
