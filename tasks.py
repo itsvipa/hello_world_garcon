@@ -1,5 +1,6 @@
 import datetime
 import time
+from random import random
 
 from garcon import task
 
@@ -19,8 +20,10 @@ def print_hello_task(activity, workflow_id, activity_name, task_name, sleep):
         dict: Context with (str) timestamp of when the task completed.
     """
 
-    if sleep:
-        time.sleep(sleep)
+    time.sleep(3)
+
+    if(random() < 0.1):
+        raise Exception('Random Error')
 
     message = '{workflow_id}: I am {activity_name}, {task_name}'.format(
         workflow_id=workflow_id,

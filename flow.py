@@ -12,7 +12,7 @@ import tasks
 HELLO_WORLD_USER = 'HELLO_WORLD_USER'
 
 
-class HelloWorldFlow(object):
+class Flow(object):
     def __init__(self, domain, version):
         """Create a WorkFlow flow.
 
@@ -93,7 +93,8 @@ class HelloWorldFlow(object):
                     namespace='activity_one_task_one',
                     workflow_id='execution.workflow_id',
                     activity_name=param.StaticParam('Activity 1'),
-                    task_name=param.StaticParam('Task 1'))))
+                    task_name=param.StaticParam('Task 1'))),
+            retry=5)
 
     @property
     def hello_world_two_activity(self):
@@ -109,7 +110,9 @@ class HelloWorldFlow(object):
                     namespace='activity_two_task_two',
                     workflow_id='execution.workflow_id',
                     activity_name=param.StaticParam('Activity 2'),
-                    task_name=param.StaticParam('Task 2'))))
+                    task_name=param.StaticParam('Task 2'))),
+            retry=5)
+
 
     @property
     def hello_world_three_activity(self):
@@ -120,7 +123,9 @@ class HelloWorldFlow(object):
                     namespace='activity_three_task_one',
                     workflow_id='execution.workflow_id',
                     activity_name=param.StaticParam('Activity 3'),
-                    task_name=param.StaticParam('Task 1'))))
+                    task_name=param.StaticParam('Task 1'))),
+            retry=5)
+
 
     @property
     def hello_world_four_activity(self):
@@ -131,7 +136,9 @@ class HelloWorldFlow(object):
                     namespace='activity_four_task_one',
                     workflow_id='execution.workflow_id',
                     activity_name=param.StaticParam('Activity 4'),
-                    task_name=param.StaticParam('Task 1'))))
+                    task_name=param.StaticParam('Task 1'))),
+            retry=5)
+
 
     @property
     def hello_world_five_activity(self):
@@ -148,4 +155,5 @@ class HelloWorldFlow(object):
                     namespace='activity_five_task_two',
                     workflow_id='execution.workflow_id',
                     activity_name=param.StaticParam('Activity 5'),
-                    task_name=param.StaticParam('Task 2'))))
+                    task_name=param.StaticParam('Task 2'))),
+            retry=5)

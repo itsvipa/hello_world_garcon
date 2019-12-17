@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+pytest-django = "*"
+django-debug-toolbar = "*"
+factory-boy = "*"
+
+[packages]
+boto = "*"
+garcon = {editable = true,git = "https://github.com/itsvipa/garcon.git",ref = "feature/visualisation"}
+flask = "*"
+
+[requires]
+python_version = "3.7"

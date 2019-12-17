@@ -5,7 +5,7 @@ import boto.swf.layer2 as swf
 import flow
 
 initial_context = dict(foo='bar')
-hello_world_flow = flow.HelloWorldFlow('dev', '1.0')
+hello_world_flow = flow.Flow('dev', '1.0')
 workflow_execution = swf.WorkflowType(
         name=hello_world_flow.name,
         domain=hello_world_flow.domain,
