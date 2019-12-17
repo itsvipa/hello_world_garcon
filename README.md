@@ -11,9 +11,7 @@ A simple intro Garcon workflow.
 
 #### Set up a virtual Python environment
 ```sh
-$ pyvenv ./env
-$ source ./env/bin/activate
-$ pip install -r requirements.txt
+$ pipenv install
 ```
 #### Set up environment variables
 .env.shadow is a template environment variable script that exports keys and values necessary for the app.  You will need to copy this file to `.env` and populate the necessary keys.
@@ -25,22 +23,22 @@ $ source .env
 
 ### Running a Garcon Workflow
 
-In seperate terminals run a Decider & a Worker
+In separate terminals run a Decider & a Worker
 
 (don't forget to activate the virtualenv and set the required .env variables first in each terminal)
 
 #### Garcon Worker
 ```sh
-$ source env/bin/activate
-$ source .env
-$ python ./run_worker.py 
+$ pipenv run python ./run_worker.py 
 ```
 
 #### Garcon Decider
 ```sh
-$ source env/bin/activate
-$ source .env
-$ python ./run_decider.py 
+$ pipenv run python ./run_decider.py 
+```
+#### Garcon Visualiser
+```sh
+$ pipenv run python -m garcon.visualiser flow.py summary dev 1.0
 ```
 
 Once a Decider & Worker are running, open another terminal & execute a workflow.
