@@ -20,9 +20,9 @@ def print_hello_task(activity, workflow_id, activity_name, task_name, sleep):
         dict: Context with (str) timestamp of when the task completed.
     """
 
-    time.sleep(3)
+    time.sleep(0.1)
 
-    if(random() < 0.1):
+    if(random() < 0.05):
         raise Exception('Random Error')
 
     message = '{workflow_id}: I am {activity_name}, {task_name}'.format(

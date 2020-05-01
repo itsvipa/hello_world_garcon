@@ -1,0 +1,3 @@
+[console_scripts]
+garcon-activity-local = garcon.contrib.local_activity_cli:main
+

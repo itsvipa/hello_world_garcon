@@ -12,8 +12,10 @@ factory-boy = "*"
 
 [packages]
 boto = "*"
-garcon = {editable = true,git = "https://github.com/itsvipa/garcon.git",ref = "feature/visualisation"}
 flask = "*"
+garcon = {git = "https://github.com/xethorn/garcon",editable = true}
+garcon-contrib-cli = {editable = true,path = "./contrib-cli"}
+ado = {editable = true,path = "./../ado"}
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
